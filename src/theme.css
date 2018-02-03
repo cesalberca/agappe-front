@@ -1,0 +1,9 @@
+:root {
+    --primary: hsla(32, 100%, 50%, 1);
+    --accent: hsla(312, 52%, 57%, 1);
+    --secondary: hsla(199, 100%, 50%, 1);
+    --terniary: hsla(251, 100%, 70%, 1);
+
+    --spacing-unit: 1rem;
+    --spacing-unit-s: 2rem;
+}

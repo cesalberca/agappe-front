@@ -1,0 +1,51 @@
+.button {
+    text-transform: uppercase;
+    font-weight: lighter;
+    background: linear-gradient(to left top, #bb61b9, #ff8801);
+    color: white;
+    border: none;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.15rem;
+    border-radius: 0.25rem;
+    background-size: 150% 150%;
+    transition: 0.25s ease all;
+    outline: 0;
+    padding: var(--spacing-unit);
+}
+
+.button:after {
+    opacity: 0;
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100%;
+    background: linear-gradient(to left top, #bb61b9, #ff8801);
+    height: 100%;
+    filter: blur(10px);
+    transform: translateY(10px);
+    transition: 0.25s ease opacity;
+}
+
+.button:hover {
+    animation: gradient 2s ease infinite;
+    cursor: pointer;
+}
+
+.button:hover:after {
+    opacity: 1;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}

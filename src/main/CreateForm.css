@@ -1,0 +1,38 @@
+.form {
+    margin: var(--spacing-unit);
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__title {
+    font-size: 6rem;
+    margin: 0;
+    position: relative;
+    z-index: -1;
+    transform: translateY(70%);
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+.form__main-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__main-inputs > input {
+    margin-top: var(--spacing-unit);
+    padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+}
+
+.form__main-inputs > input:focus {
+    outline: 0;
+    border: 1px solid var(--primary);
+}
+
+.form__main-inputs__button {
+    transform: translate(50%, 100%);
+    padding: 0.5rem 2rem;
+    width: min-content;
+    align-self: flex-end;
+}
