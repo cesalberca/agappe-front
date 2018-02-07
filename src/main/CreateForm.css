@@ -10,7 +10,7 @@
     margin: 0;
     position: relative;
     z-index: -1;
-    transform: translateY(70%);
+    transform: translateY(50%);
     text-transform: uppercase;
     letter-spacing: 1rem;
 }

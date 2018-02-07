@@ -28,7 +28,7 @@
 
 .meal-card__info-score {
     margin-top: auto;
-    transform: translate(1rem, calc(100% - 5%));
+    color: gold;
 }
 
 .meal-card__info-score > span {
