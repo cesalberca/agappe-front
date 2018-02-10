@@ -14,7 +14,7 @@ fun RBuilder.MealCard(meal: String, author: String, date: String, score: Int) {
         div("meal-card__info") {
             span { +date }
             div("meal-card__info-score") {
-                for (point in 1..score) {
+                (1..score).forEach {
                     i("fas fa-star") { }
                 }
 
