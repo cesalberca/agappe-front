@@ -16,7 +16,7 @@ interface CreateFormState : RState {
     var name: String
     var author: String
     var date: String
-    var score: Int
+    var score: String
 }
 
 class CreateForm(props: CreateFormProps) : RComponent<CreateFormProps, CreateFormState>(props) {
@@ -25,7 +25,7 @@ class CreateForm(props: CreateFormProps) : RComponent<CreateFormProps, CreateFor
         name = ""
         author = ""
         date = ""
-        score = 0
+        score = "0"
     }
 
     override fun RBuilder.render() {
@@ -41,7 +41,7 @@ class CreateForm(props: CreateFormProps) : RComponent<CreateFormProps, CreateFor
 
             div("form__main-inputs") {
                 Button("Crear", {
-                    props.handleClick(state.name, state.author, state.date, state.score)
+                    props.handleClick(state.name, state.author, state.date, state.score.toInt())
                     resetState()
                 }, extraStyles = "form__main-inputs__button")
 
@@ -87,11 +87,13 @@ class CreateForm(props: CreateFormProps) : RComponent<CreateFormProps, CreateFor
                 input {
                     attrs {
                         type = InputType.number
-                        value = state.score.toString()
+                        min = "0"
+                        max = "5"
+                        value = state.score
                         onChangeFunction = {
                             val target = it.target as HTMLInputElement
                             setState {
-                                score = target.value.toInt()
+                                score = target.value
                             }
                         }
                     }
@@ -106,7 +108,7 @@ class CreateForm(props: CreateFormProps) : RComponent<CreateFormProps, CreateFor
             author = ""
             name = ""
             date = ""
-            score = 0
+            score = "0"
         }
     }
 
