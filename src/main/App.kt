@@ -31,7 +31,7 @@ class App : RComponent<RProps, ApplicationState>() {
     ) {
         window.fetch("http://localhost:8080/meals", object: RequestInit {
             override var method: String? = "POST"
-            override var body: dynamic = JSON.stringify(Meal(name, author, date, score))
+            override var body: dynamic = JSON.stringify(Meal(author, name, date, score))
             override var headers: dynamic = json("Content-Type" to "application/json")
         })
             .then {
